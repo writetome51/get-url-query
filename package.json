@@ -1,0 +1,32 @@
+{
+  "name": "@writetome51/get-url-query",
+  "version": "0.0.1",
+  "description": "Takes in key:value pairs (a literal object) and returns a url-escaped GET query string",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/writetome51/get-url-query.git"
+  },
+  "keywords": [
+    "url",
+    "query",
+    "get",
+    "parameters",
+    "string",
+    "request",
+    "escaped"
+  ],
+  "author": "Steve Thompson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/writetome51/get-url-query/issues"
+  },
+  "homepage": "https://github.com/writetome51/get-url-query#readme",
+  "devDependencies": {},
+  "dependencies": {
+  }
+}
