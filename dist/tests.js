@@ -1,7 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = require("./index");
+var dist_1 = require("../dist");
 var a = 22;
 var k = 1;
-var result = index_1.getURLQuery({ k: k, a: a });
+var result = dist_1.getURLQuery('a');
 console.log(result);
+a = ' &%*()-_&';
+k = '&  !';
+result = dist_1.getURLQuery({ k: k, a: a });
+console.log(result);
+var obj = dist_1.getObjectFromURLQuery(result);
+console.log(obj);
+obj = { k: '&  !', a: ' &%*()-_&' };

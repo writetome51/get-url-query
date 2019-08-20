@@ -1,6 +1,6 @@
 # getURLQuery(keyValuePairs): string
 
-Converts `keyValuePairs` to a url-escaped GET query string and returns it.
+Converts `keyValuePairs` to a URI-encoded GET query string and returns it.
 
 ## Examples
 
@@ -8,7 +8,7 @@ Converts `keyValuePairs` to a url-escaped GET query string and returns it.
 getURLQuery({name:'joe schmoe', email:'joeschmoe@gmail.com', password:'!@#^&ÅÍÔ†'});
 // -->  '?name=joe%20schmoe&email=joeschmoe@gmail.com&password=!@#%5E&%C3%85%C3%8D%C3%94%E2%80%A0'
 
-// You can un-escape the string by passing it to decodeURI():
+// You can decode the information by passing it to decodeURI():
 decodeURI('?name=joe%20schmoe&email=joeschmoe@gmail.com&password=!@#%5E&%C3%85%C3%8D%C3%94%E2%80%A0');
 // -->  '?name=joe schmoe&email=joeschmoe@gmail.com&password=!@#^&ÅÍÔ†'
 ```
