@@ -28,5 +28,6 @@
   "homepage": "https://github.com/writetome51/get-url-query#readme",
   "devDependencies": {},
   "dependencies": {
+    "copy-object": "^1.0.0"
   }
 }

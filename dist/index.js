@@ -1,15 +1,17 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+// @ts-ignore
+var getObjectCopy = require("copy-object");
 /************
  Returns `keyValuePairs` as a URI-encoded GET query string.  Example:
 
  getURLQuery({name:'joe schmoe', email:'joeschmoe@gmail.com'});
  // -->   '?name=joe%20schmoe&email=joeschmoe@gmail.com'
  **************/
-Object.defineProperty(exports, "__esModule", { value: true });
 function getURLQuery(keyValuePairs) {
     if (Object.keys(keyValuePairs).length === 0)
         return '';
-    var copy = Object.create(keyValuePairs);
+    var copy = getObjectCopy(keyValuePairs);
     // encode each value:
     for (var key in copy)
         copy[key] = encodeURIComponent(copy[key]);

@@ -1,6 +1,6 @@
 # getURLQuery(keyValuePairs): string
 
-Converts `keyValuePairs` to a URI-encoded GET query string and returns it.
+Converts `keyValuePairs` to a URI-encoded query string and returns it.
 
 # getObjectFromURLQuery(urlQuery): Object
 
@@ -8,16 +8,17 @@ Performs the reverse of `getURLQuery()`.
 Decodes `urlQuery` and returns it as an object of key-value pairs.
 
 
-
 ## Examples
 
 ```ts
-getURLQuery({name:'joe schmoe', email:'joeschmoe@gmail.com', password:'!@#^&ÅÍÔ†'});
-// -->  '?name=joe%20schmoe&email=joeschmoe@gmail.com&password=!@#%5E&%C3%85%C3%8D%C3%94%E2%80%A0'
+let urlQuery = getURLQuery(
+	{name:'joe schmoe', email:'jschmoe@gmail.com', password:'&ÅÍ†'}
+);
+// urlQuery is '?name=joe%20schmoe&email=jschmoe%40gmail.com&password=%26%C3%85%C3%8D%E2%80%A0'
 
 // You can decode the information by passing it to getObjectFromURLQuery():
-getObjectFromURLQuery('?name=joe%20schmoe&email=joeschmoe@gmail.com&password=!@#%5E&%C3%85%C3%8D%C3%94%E2%80%A0');
-// -->  {name: 'joe schmoe', email: 'joeschmoe@gmail.com', password: '!@#^&ÅÍÔ†'}
+getObjectFromURLQuery(urlQuery);
+// -->  { name: 'joe schmoe', email: 'jschmoe@gmail.com', password: '&ÅÍ†' }
 ```
 
 ## Installation

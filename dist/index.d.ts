@@ -4,7 +4,9 @@
  getURLQuery({name:'joe schmoe', email:'joeschmoe@gmail.com'});
  // -->   '?name=joe%20schmoe&email=joeschmoe@gmail.com'
  **************/
-export declare function getURLQuery(keyValuePairs: Object): string;
+export declare function getURLQuery(keyValuePairs: any): string;
+
+
 /****************
  Performs the reverse of getURLQuery().
  Decodes urlQuery and returns it as an object of key-value pairs.

@@ -1,3 +1,7 @@
+// @ts-ignore
+const getObjectCopy = require("copy-object");
+
+
 /************
  Returns `keyValuePairs` as a URI-encoded GET query string.  Example:
 
@@ -7,7 +11,7 @@
 
 export function getURLQuery(keyValuePairs): string {
 	if (Object.keys(keyValuePairs).length === 0) return '';
-	let copy = Object.create(keyValuePairs);
+	let copy = getObjectCopy(keyValuePairs);
 
 	// encode each value:
 	for (let key in copy) copy[key] = encodeURIComponent(copy[key]);
@@ -23,7 +27,8 @@ export function getURLQuery(keyValuePairs): string {
  Decodes urlQuery and returns it as an object of key-value pairs.
 
  ***************/
-export function getObjectFromURLQuery(urlQuery:string): any {
+
+export function getObjectFromURLQuery(urlQuery: string): any {
 	urlQuery = urlQuery.split('?').join('');
 	let parts = urlQuery.split('&');
 	let obj = {};
