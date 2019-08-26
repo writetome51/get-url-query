@@ -23,8 +23,9 @@ function getURLQuery(keyValuePairs) {
 exports.getURLQuery = getURLQuery;
 /****************
  Performs the reverse of getURLQuery().
- Decodes urlQuery and returns it as an object of key-value pairs.
-
+ Decodes `urlQuery` and returns it as an object of key-value pairs.
+ The function assumes that any '?' and '&' in `urlQuery` are special
+ reserved characters that are not part of the parameters' values.
  ***************/
 function getObjectFromURLQuery(urlQuery) {
     urlQuery = urlQuery.split('?').join('');

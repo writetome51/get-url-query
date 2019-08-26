@@ -3,7 +3,7 @@ import { getObjectFromURLQuery, getURLQuery } from '../dist';
 
 let a: any = 22;
 let k: any = 1;
-let result: any = getURLQuery('a');
+let result: any = getURLQuery({a,k});
 console.log(result);
 
 
@@ -19,7 +19,7 @@ obj = {k: '&  !', a: ' &%*()-_&'};
 
 
 let urlQuery = getURLQuery(
-	{name:'joe schmoe', email:'jschmoe@gmail.com', password:'&ÅÍ†'}
+	{name:'joe schmoe?', email:'jschmoe?@gmail.com', password:'?&ÅÍ†'}
 );
 console.log(urlQuery);
 // urlQuery is '?name=joe%20schmoe&email=jschmoe%40gmail.com&password=%26%C3%85%C3%8D%E2%80%A0'
