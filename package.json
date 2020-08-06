@@ -1,7 +1,8 @@
 {
   "name": "@writetome51/get-url-query",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Takes in key:value pairs (a literal object) and returns a url-escaped GET query string",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -28,6 +29,6 @@
   "homepage": "https://github.com/writetome51/get-url-query#readme",
   "devDependencies": {},
   "dependencies": {
-    "copy-object": "^1.0.0"
+    "@writetome51/get-object-copy": "^1.0.0"
   }
 }

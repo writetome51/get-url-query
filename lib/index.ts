@@ -1,5 +1,4 @@
-// @ts-ignore
-const getObjectCopy = require("copy-object");
+import { getObjectCopy } from '@writetome51/get-object-copy';
 
 
 /************
@@ -17,8 +16,8 @@ export function getURLQuery(keyValuePairs): string {
 	for (let key in copy) copy[key] = encodeURIComponent(copy[key]);
 
 	let getQuery = '?';
-	for (let key in copy) getQuery += (key + '=' + copy[key] + '&');
-	return getQuery.slice(0, -1); // removes the trailing '&' .
+	for (let key in copy) getQuery += (encodeURIComponent(key) + '=' + copy[key] + '&');
+	return getQuery.slice(0, -1); // removes the trailing '&'
 }
 
 
@@ -30,12 +29,13 @@ export function getURLQuery(keyValuePairs): string {
  ***************/
 
 export function getObjectFromURLQuery(urlQuery: string): any {
-	urlQuery = urlQuery.split('?').join('');
+	urlQuery = urlQuery.split('?').join(''); // removes beginning '?', if any.
 	let parts = urlQuery.split('&');
 	let obj = {};
 
 	parts.forEach((part) => {
 		let [key, value] = part.split('=');
+		key = decodeURIComponent(key);
 		obj[key] = decodeURIComponent(value);
 	});
 	return obj;

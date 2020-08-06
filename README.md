@@ -1,20 +1,19 @@
-# getURLQuery(keyValuePairs): string
+# getURLQuery(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keyValuePairs: object<br>): string
 
 Converts `keyValuePairs` to a URI-encoded query string and returns it.
 
-# getObjectFromURLQuery(urlQuery): Object
+# getObjectFromURLQuery(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;urlQuery: string<br>): object
 
 Performs the reverse of `getURLQuery()`.  
 Decodes `urlQuery` and returns it as an object of key-value pairs.
 
 
 ## Examples
-
-```ts
+```js
 let urlQuery = getURLQuery(
 	{name:'joe schmoe', email:'jschmoe@gmail.com', password:'&ÅÍ†'}
 );
-// urlQuery is '?name=joe%20schmoe&email=jschmoe%40gmail.com&password=%26%C3%85%C3%8D%E2%80%A0'
+// urlQuery === '?name=joe%20schmoe&email=jschmoe%40gmail.com&password=%26%C3%85%C3%8D%E2%80%A0'
 
 // You can decode the information by passing it to getObjectFromURLQuery():
 getObjectFromURLQuery(urlQuery);
@@ -22,15 +21,11 @@ getObjectFromURLQuery(urlQuery);
 ```
 
 ## Installation
-
 ```bash
 npm i  @writetome51/get-url-query
 ```
 
 ## Loading
-```ts
-// If using TypeScript:
-import {getURLQuery} from '@writetome51/get-url-query';
-// If using ES5 JavaScript:
-var getURLQuery = require('@writetome51/get-url-query').getURLQuery;
+```js
+import {getURLQuery, getObjectFromURLQuery} from '@writetome51/get-url-query';
 ```
